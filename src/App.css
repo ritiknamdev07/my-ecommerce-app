@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+}
+
+
+/* card here */
+.card-parent{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    height: calc(100vh - 42px);
+
+}
