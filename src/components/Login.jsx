@@ -1,10 +1,12 @@
 import React from "react"
-
+import loginStyle from "./login.module.css"
 
 const Login = () => {
     return(<>
-   
-    <h2>this is  a login page</h2></>)
+   <div className={loginStyle.container}>
+     <div>1</div><div>2</div>
+                </div>
+   </>)
 }
 
 export default Login

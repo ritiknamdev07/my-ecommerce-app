@@ -8,8 +8,10 @@ const Navbar = () => {
     </Link>
     <div className={navbarCSS.search_box}>
     <form className={navbarCSS.searchForm}>
-      <input className={navbarCSS.input} type="search" placeholder="Search..." />
-     <span className={navbarCSS.icon}>&#128269;</span>
+    {/* <span className={navbarCSS.icon}>&#128269;</span> */}
+    <label className={navbarCSS.icon} >&#128269;</label>
+      <input className={navbarCSS.input} type="search" placeholder="Search for Products, Brands and More..." />
+     
     </form>
     </div>
     <div className={navbarCSS.login_div}>

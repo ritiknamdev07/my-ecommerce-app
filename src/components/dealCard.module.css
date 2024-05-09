@@ -5,21 +5,22 @@
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 30px;
     padding: 10px 30px;
 }
 
 .conatiner .box{
   
- width: 320px;
- height: 400px;
+ width: 250px;
+ height: 360px;
   overflow: hidden;
-  background: #e8e8e8;
+  background: #ffffff;
   margin-top: 20px;
   margin-left: 20px;
   padding: 10px 20px;
    cursor: pointer;
+   border-radius: 4px;
 
    
 
@@ -32,8 +33,10 @@
 
 }
 
+
 .img_box {
-    
+    width: 250px;
+    height: 300px;
 
 }
 .img_box img{
@@ -45,15 +48,84 @@
 
 
 .info{
-   display: flex;
-   justify-content: space-between;
-   margin-top: 30px;
+    max-width: 250px;
+    height: 60px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+
 }
+
+.rating{
+    width: 50px;
+    height: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: start;
+    
+    
+}
+
+.ratingRate{
+    line-height: normal;
+    display: inline-block;
+    color: #fff;
+    padding: 2px 4px 2px 6px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 14px;
+    vertical-align: middle;
+  background: #ff9f00;
+  
+}
+
+.ratingCount{
+   font-size: smaller;
+   color: #a09d9d;
+}
+
+.priceDiv {
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-self: start;
+    
+
+ 
+  
+    
+}
+
+.percentageOff{
+    align-self: center;
+    color: #388e3c;
+    font-size: 13px;
+    letter-spacing: -.2px;
+    margin-left: 4px;
+    font-weight: 600;
+}
+
+.actualPrice{
+   margin-left: 4px;
+    text-decoration: line-through;
+    font-weight: lighter;
+    color: #bab6b6;
+
+}
+
 
 .info h3{
      color: #fe4a55;
+     font-size: 18px;
      text-transform: uppercase;
      font-weight: 200;
+     display: -webkit-box;
+     -webkit-line-clamp: 1; /* Set the desired number of lines */
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+     
 }
 
 .deatil button{
@@ -87,7 +159,7 @@
 
 .detail_info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 50px;
 }
 
@@ -110,7 +182,7 @@
 .d_pro_info p {
     margin-top: 10px;
     margin-right: 30px;
-    color: #777171;
+    color: #050505;
 }
 
 .d_pro_info button {
