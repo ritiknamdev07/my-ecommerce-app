@@ -1,19 +1,13 @@
 
-import dealCss from "./dealCard.module.css"
+import {  Link } from "react-router-dom";
+import cardStyle from "./dealCard.module.css"
+import PropTypes from 'prop-types';
 
 
-
-const DealCard = ({ deal, setDetail, }) => {
-
+const DealCard = (props) => {
+ 
+   const {product} = props
    
-  const pageDetail = ( d)=>{
-       setDetail([{...d}])
-      
-      
-  }
-
- let actualPrices = parseInt(deal.price/(1-(deal.discountPercentage/100)))
-
 
 
 return (<>
@@ -21,32 +15,37 @@ return (<>
  
 
   
-    <div onClick={()=>pageDetail(deal)} className={dealCss.box}>
-    <div className={dealCss.contant}>
-    <div className={dealCss.img_box}>
-  <img src={deal.images[0]} alt={deal.title} />
+    <div className={cardStyle.box}>
+    <div className={cardStyle.content}>
+     <Link to={`/products/category/${product.category}`} >
+    <div  className={cardStyle.img_box}>
+    <img  src={product.thumbnail} alt={product.title} />
+  
       </div>
-      <div className={dealCss.deatil}>
-      <div className={dealCss.info}>
-      <h3>{deal.title}</h3>
-      <div className={dealCss.rating}>
-      <p className={dealCss.ratingRate}>{deal.rating}&#9734;</p>
+      </Link>
+     
+      <div className={cardStyle.detail}>
+      <div className={cardStyle.info}>
+     {product.tags? product.tags.length>1? <h3>{product.tags[1]}</h3> : <h3>{product.tags[0]}</h3> : <h3>{product.title}</h3>}
+
+     {product.discountPercentage && <p className={cardStyle.percentageOff} >{ parseInt(product.discountPercentage)>0?`Min. ${parseInt(product.discountPercentage)}% off`: "Most-Loved"}</p>}
+      {/* <div  className={cardStyle.rating}>
+      <p className={cardStyle.ratingRate}>{product.rating}&#9734;</p>
       </div>
       
-      <div className={dealCss.priceDiv}>
-      <p>${deal.price}</p>
-      {actualPrices?<p className={dealCss.actualPrice}>${actualPrices}</p>:<p className={dealCss.actualPrice}>${deal.actualPrice}</p>}
-      <div className={dealCss.percentageOff}>
-       {deal.discountPercentage && <p>{deal.discountPercentage}%off</p>}
-    </div>
-      
-      </div>
+      <div className={cardStyle.priceDiv}>
+      <p>${product.price}</p>
+      <p className={cardStyle.actualPrice}>${parseInt(product.price/(1-(product.discountPercentage/100)))}</p>
+       {product.discountPercentage && <p className={cardStyle.percentageOff} >{parseInt(product.discountPercentage)}% off</p>}
+    </div> */}
+     
       </div>
      
-     {/* <button  onClick={()=>pageDetail(deal)} >View</button> */}
+      </div>
+
       </div>
     </div>
-    </div>
+
    
     </>
   );
@@ -54,3 +53,6 @@ return (<>
 
 export default DealCard;
 
+DealCard.propTypes = {
+  product: PropTypes.object.isRequired, // Example, adjust as needed
+};

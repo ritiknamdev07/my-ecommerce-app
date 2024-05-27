@@ -97,6 +97,15 @@ justify-content: space-between;
     justify-content: space-around;
 }
 
+.percentageOff{
+
+    color: #388e3c;
+    font-size: 15px;
+    letter-spacing: -.2px;
+  
+    font-weight: 600;
+}
+
 
 
 .info h3{
@@ -231,7 +240,35 @@ border: 0px;
 
 
 
+.missCartOutdiv{
+    margin: 0 auto;
+    min-width: 978px;
+    max-width: 1680px;
+    padding: 8px;
+    
+}
 
+
+.missingCartDiv{
+    width: 1300px;
+  height: 470px;
+    margin: 20px auto;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.missingCartDiv img{
+    width: 220px;
+    height: 162px;
+}
+
+.missingCartDiv h1 {
+    display: block;
+    font-size: 18px;
+    margin-top: 24px;
+}
 
 
 

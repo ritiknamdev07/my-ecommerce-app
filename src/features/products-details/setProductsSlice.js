@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { useEffect } from "react";
 
 // productsReducer.js
 // const initialState =[
@@ -512,6 +513,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   products: [],
 };
+
+
 
 export const productsReducer = createSlice({
   name: "products",

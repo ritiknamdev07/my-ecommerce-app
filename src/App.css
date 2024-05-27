@@ -1,10 +1,8 @@
-*{
-    margin: 0;
-}
+
 
 
 /* card here */
-.card-parent{
+/* .card-parent{
 
     display: flex;
     flex-wrap: wrap;
@@ -14,8 +12,8 @@
     margin: 0 auto;
     height: calc(100vh - 42px);
 
-}
+} */
 body{
     background-color: rgb(220, 217, 217);
-    
+    margin: 0 ;
 }
