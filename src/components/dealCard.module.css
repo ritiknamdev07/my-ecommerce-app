@@ -2,7 +2,7 @@
 .mostOuterDiv{
  
     display:  grid;
-    width: 1600px;
+    width: 1500px;
     margin: auto;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(auto, 600px);
@@ -19,18 +19,122 @@
     flex-direction: column;
     justify-content: space-around;
     background: white;
+ 
 
 }
 
 
+.specialOuterDiv{
+    width: 1500px;
+    margin: 0 auto;
+}
+
+.specialDiv{
+    height: auto;
+    width: 1500px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    z-index: 0;
+   
+}
+
+.scrollButton {
+
+
+    background-color: #c0cbd6;
+    color: rgb(246, 245, 245);
+    border: none;
+  
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    height: 80px;
+    width: 30px;
+}
+
+.scrollButton.left {
+    left: 0;
+}
+
+.scrollButton.right {
+    right: 0;
+}
+
+.specialContainer{
+
+    width: 1500px;
+    margin: 0 auto;
+    height: 340px;
+     padding: 10px;    
+     display: flex;
+ 
+    align-items: baseline;
+  
+ 
+  
+    /* margin-top: 30px; */
+    gap: 1rem;
+   
+  
+    background: white;
+   
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;
+}
+.specialContainer .box{
+  
+    /* width: 250px;
+    height: 360px; */
+     width: 180px;  /*changes*/
+   height: 290px; 
+
+     background: #ffffff;
+   
+     padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 4px;
+      border: 1px solid rgb(159, 157, 157);
+      
+   
+      
+   
+   }
+   .specialContainer .box .content{
+   
+    align-items: center;
+    max-width: 100%;
+
+}
+
+
+.specialContainer .img_box:hover img{
+    width: 195px;
+    height: 245px; 
+
+    overflow: hidden;
+}
+
+
+
 .container{
    
-   max-width: 100pc;
-    margin: 0 auto;
+   max-width: 90pc;
+    margin: 0 ;
     display: flex;
     flex-wrap: wrap;
     align-items: start;
-    justify-content: center;
+    justify-content: start;
     
     /* margin-top: 30px; */
     gap: 1rem;
@@ -41,20 +145,47 @@
 
 .categoryNameDiv{
     background: #ffffff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.categoryNameDiv h2 {
-  color: blue;
+
+.categoryNameDiv a{
+    text-decoration: none;
+}
+
+.categoryNameDiv:hover h2{
+    color:#2874f0;
+}
+
+.categoryName {
+  color: rgb(1, 1, 14);
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.categoryBtn{
+    background: #2874f0;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    padding: 4px 8px;
+    border: none;
+    font-weight: 700;
+    
 }
 
 .container .box{
   
- /* width: 250px;
- height: 360px; */
+
  width: 200px;
- height: 300px;
+ height: 300px; 
+
+ /* width: 180px;
+ height: 240px; */
   overflow: hidden;
   background: #ffffff;
 
@@ -62,6 +193,7 @@
    cursor: pointer;
    border-radius: 4px;
    border: 1px solid rgb(159, 157, 157);
+   margin-left: 10px;
    
 
    
@@ -77,31 +209,52 @@
 
 
 .img_box {
-    /* width: 250px;
-    height: 300px; */
+   
     width: 200px;
     height: 250px;
 
 }
 .img_box img{
-    /* width: 250px;
-     height: 300px; */
+    
      width: 200px;
      height: 250px;
+     /* width: 180px;
+     height: 200px; */
+     overflow: hidden;
+    
+
+}
+
+.container .img_box:hover img{
+     width: 206px;
+     height: 256px; 
+
      overflow: hidden;
 }
 
 
-
 .info{
-    max-width: 250px;
+    max-width: 200px;
     height: 60px;
     overflow: hidden;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-around;
+ 
+    
+    
 
 }
+
+
+
+
+.percentageOff{
+   
+    color: #388e3c;
+    font-size: 16px;
+    letter-spacing: -.2px;
+  
+    font-weight: 600;
+}
+
 
 .rating{
     width: 50px;
@@ -144,14 +297,6 @@
     
 }
 
-.percentageOff{
-   
-    color: #388e3c;
-    font-size: 20px;
-    letter-spacing: -.2px;
-  
-    font-weight: 600;
-}
 
 .actualPrice{
    margin-left: 4px;

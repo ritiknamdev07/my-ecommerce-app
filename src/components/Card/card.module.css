@@ -1,0 +1,140 @@
+.conatiner{
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    
+    align-content: space-evenly;
+    margin-top: 30px;
+    padding: 10px 30px;
+    
+}
+
+.box{
+
+ width: 260px;
+ height: 370px;
+  overflow: hidden;
+  background: #ffffff;
+  /* margin-top: 20px;
+  margin-left: 20px; */
+  padding: 20px 10px;
+   cursor: pointer;
+   border-radius: 4px;
+   border: 1px solid gainsboro;
+   align-self: center;
+
+
+   
+
+}
+
+.conatiner .box .content{
+   
+    align-items: center;
+    max-width: 100%;
+
+}
+
+
+.img_box {
+    width: 250px;
+    height: 300px;
+
+}
+.img_box img{
+    width: 250px;
+     height: 300px;
+     overflow: hidden;
+}
+
+
+
+.info{
+    max-width: 250px;
+    height: 70px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+
+}
+
+.rating{
+    width: 50px;
+    height: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: start;
+    
+    
+}
+
+.ratingRate{
+    line-height: normal;
+    display: inline-block;
+    color: #fff;
+    padding: 2px 4px 2px 6px;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 14px;
+    vertical-align: middle;
+  background: #ff9f00;
+  
+}
+
+.ratingCount{
+   font-size: smaller;
+   color: #a09d9d;
+}
+
+.priceDiv {
+    
+    display: flex;
+    flex-wrap: wrap;
+    align-self: start;
+    /* justify-content: space-around; */
+   gap: 1rem;
+  
+    
+}
+
+.percentageOff{
+    align-self: center;
+    color: #388e3c;
+    font-size: 15px;
+    letter-spacing: -.2px;
+    margin-left: 4px;
+    font-weight: 600;
+}
+
+.actualPrice{
+   margin-left: 4px;
+    text-decoration: line-through;
+    font-weight: lighter;
+    color: #bab6b6;
+
+}
+
+
+.info h3{
+     color: #080808;
+     font-size: 18px;
+     text-transform: uppercase;
+     font-weight: 200;
+     display: -webkit-box;
+     -webkit-line-clamp: 1; /* Set the desired number of lines */
+     -webkit-box-orient: vertical;
+     overflow: hidden;
+     
+}
+
+ .box:hover h3{
+    color: #2874f0;
+}
+
+/* .box:hover {
+    border-color: #2874f0;
+} */

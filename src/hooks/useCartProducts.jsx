@@ -1,47 +1,64 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 
 const useCartProducts = () => {
   const [cartProducts, setCartProducts] = useState([]);
 
-  // const [cart, setCart] = useState([]);
   const addProductToCart = useCallback((product) => {
-    setCartProducts((cartProduct) => {
-      return [...cartProduct, product];
+    setCartProducts((ExistingProducts) => {
+      const existingProductIndex = ExistingProducts.findIndex(
+        (existingProduct) => existingProduct.id === product.id
+      );
+      if (existingProductIndex > -1) {
+        // Product already exists in cart, update quantity
+        const updatedCartProducts = [...ExistingProducts];
+        updatedCartProducts[existingProductIndex].quantity += 1;
+        return updatedCartProducts;
+      } else {
+        // Product does not exist, add it to cart
+        return [...ExistingProducts, { ...product, quantity: 1 }];
+      }
     });
   }, []);
-
 
   const removeProductToCart = useCallback((id) => {
-    setCartProducts((pro) => {
-      return pro.filter((p) => p.id !== id);
+    setCartProducts((ExistingProducts) => {
+      return ExistingProducts.filter((product) => product.id !== id);
     });
   }, []);
 
+  const incrementQuantity = useCallback(
+    (productId) => {
+      setCartProducts(
+        cartProducts.map((product) =>
+          product.id === productId
+            ? { ...product, quantity: product.quantity + 1 }
+            : product
+        )
+      );
+    },
+    [cartProducts]
+  );
 
+  const decrementQuantity = useCallback(
+    (productId) => {
+      setCartProducts(
+        cartProducts.map((product) =>
+          product.id === productId && product.quantity > 1
+            ? { ...product, quantity: product.quantity - 1 }
+            : product
+        )
+      );
+    },
+    [cartProducts]
+  );
 
-//   useEffect(() => {
-//       // Load cart data from local storage on component mount
-//       const savedCart = JSON.parse(localStorage.getItem('cart'));
-//       if (savedCart) {
-//           setCart(savedCart);
-//       }
-//   }, []); // Empty dependency array ensures this effect runs only once on mount
-
-//   useEffect(() => {
-//       // Save cart data to local storage whenever cart state changes
-//       localStorage.setItem('cart', JSON.stringify(cartProducts));
-//   }, [cartProducts]); // Update local storage whenever cart state changes
-
-//   const removeProductToCart = (productId) => {
-//       // Remove product from cart
-//       const updatedCart = cart.filter(item => item.id !== productId);
-//       setCart(updatedCart);
-//   };
-
-// console.log(cart);
-
-
-  return { cart:cartProducts, addProductToCart, removeProductToCart };
+  return {
+    cartProducts,
+    addProductToCart,
+    removeProductToCart,
+    incrementQuantity,
+    decrementQuantity,
+  };
 };
 
 export { useCartProducts };
