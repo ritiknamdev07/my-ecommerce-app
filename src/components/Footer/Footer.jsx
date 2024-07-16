@@ -1,5 +1,7 @@
 import style from "./Footer.module.css"
-
+import { TiSocialFacebook } from "react-icons/ti";
+import { TiSocialYoutube } from "react-icons/ti";
+import { SlSocialTwitter } from "react-icons/sl";
 const Footer = () => {
 const list =  { companyList : ["about us", "oue services", "privacy policy" ],
      getHelpList : [ "FaQ", "shipping", "returns", "order status", "payment options", "report infringement"],
@@ -31,10 +33,10 @@ const list =  { companyList : ["about us", "oue services", "privacy policy" ],
     <h4>contact us</h4>
     <div className={style.socialLinks}>
   
-     <li>icon</li>
-     <li>icon</li>
-     <li>icon</li>
-     <li>icon</li>
+     <li><TiSocialFacebook /></li>
+     <li><TiSocialYoutube /></li>
+     <li><SlSocialTwitter /></li>
+     
    
     </div>
 

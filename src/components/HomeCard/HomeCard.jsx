@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import cardStyle from "./dealCard.module.css";
+import cardStyle from "./HomeCard.module.css";
 import PropTypes from "prop-types";
 
-const DealCard = (props) => {
+const HomeCard = (props) => {
   const { product } = props;
   const { category, title, thumbnail, tags, discountPercentage } = product;
 
@@ -52,8 +52,8 @@ const DealCard = (props) => {
   );
 };
 
-export default DealCard;
+export default HomeCard;
 
-DealCard.propTypes = {
+HomeCard.propTypes = {
   product: PropTypes.object.isRequired, // Example, adjust as needed
 };

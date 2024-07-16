@@ -29,7 +29,7 @@
     margin: 0 auto;
 }
 
-.specialDiv{
+/* .specialDiv{
     height: auto;
     width: 1500px;
     margin: 0 auto;
@@ -43,9 +43,9 @@
     flex-wrap: wrap;
     z-index: 0;
    
-}
+} */
 
-.scrollButton {
+/* .scrollButton {
 
 
     background-color: #c0cbd6;
@@ -67,9 +67,9 @@
 
 .scrollButton.right {
     right: 0;
-}
+} */
 
-.specialContainer{
+/* .specialContainer{
 
     width: 1500px;
     margin: 0 auto;
@@ -82,7 +82,7 @@
  
   
     /* margin-top: 30px; */
-    gap: 1rem;
+    /* gap: 1rem;
    
   
     background: white;
@@ -90,14 +90,14 @@
     overflow-x: scroll;
     scroll-behavior: smooth;
     scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none;
-}
-.specialContainer .box{
+   /* -ms-overflow-style: none;
+} */
+/*.specialContainer .box{
   
     /* width: 250px;
     height: 360px; */
-     width: 180px;  /*changes*/
-   height: 290px; 
+ /*    width: 180px;  /*changes*/
+ /*  height: 290px; 
 
      background: #ffffff;
    
@@ -109,21 +109,21 @@
    
       
    
-   }
-   .specialContainer .box .content{
+   } */
+   /* .specialContainer .box .content{
    
     align-items: center;
     max-width: 100%;
 
-}
+} */
 
 
-.specialContainer .img_box:hover img{
+/* .specialContainer .img_box:hover img{
     width: 195px;
     height: 245px; 
 
     overflow: hidden;
-}
+} */
 
 
 
@@ -141,7 +141,9 @@
     margin-bottom: 40px;
     margin-top: 10px;
     
+ 
 }
+
 
 .categoryNameDiv{
     background: #ffffff;
@@ -178,6 +180,7 @@
     
 }
 
+/* 
 .container .box{
   
 
@@ -186,6 +189,7 @@
 
  /* width: 180px;
  height: 240px; */
+ /*
   overflow: hidden;
   background: #ffffff;
 
@@ -220,7 +224,7 @@
      height: 250px;
      /* width: 180px;
      height: 200px; */
-     overflow: hidden;
+   /*  overflow: hidden;
     
 
 }
@@ -314,8 +318,8 @@
      font-weight: 200;
      display: -webkit-box;
      -webkit-line-clamp: 1; /* Set the desired number of lines */
-     -webkit-box-orient: vertical;
+   /*  -webkit-box-orient: vertical;
      overflow: hidden;
      
 }
-
+ */

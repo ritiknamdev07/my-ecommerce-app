@@ -1,5 +1,5 @@
 import "./App.css";
-import DealsContainer from "./components/DealsContainer";
+
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -17,6 +17,7 @@ import Cancel from "./components/PaymentGateway/Cancel.jsx";
 import ImageSlider from "./components/ImageSlider/ImageSlider.jsx";
 
 import Footer from "./components/Footer/Footer.jsx"
+import HomePage from "./components/Home/HomePage.jsx";
 
 function App() { 
 
@@ -30,7 +31,7 @@ function App() {
         <>
           <Navbar />
         
-          <DealsContainer key="oneSection-1" />
+          <HomePage key="oneSection-1" />
         </>
       ),
     },

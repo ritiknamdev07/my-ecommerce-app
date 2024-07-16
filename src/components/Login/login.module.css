@@ -29,6 +29,10 @@
 
 }
 
+.infoContainer{
+    height: 100px;
+}
+
 .imgDiv{
     margin-top: 180px;
 }

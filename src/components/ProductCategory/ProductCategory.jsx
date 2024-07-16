@@ -1,11 +1,13 @@
 import { Link, useParams } from "react-router-dom";
-
-import { useContext, useEffect, useMemo, useState } from "react";
+import React, { Suspense, useContext, useEffect, useMemo, useState } from "react";
 import PropTypes from "prop-types";
 import style from "./productCategory.module.css";
 import { AppContext } from "../../context";
 import useFilterProducts from "../../hooks/useFilterProducts";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+//import CategoryCard from "./CategoryCard";
 
+const CategoryCard = React.lazy(() => import("./CategoryCard"));
 
 const useProductsData = () => useContext(AppContext);
 export default function ProductCategory() {
@@ -13,6 +15,7 @@ export default function ProductCategory() {
 
   const { categoryName } = useParams();
   const { products, fetchProducts } = useProductsData();
+
   const [filters, setFilters] = useState({
     selectedDiscounts: {
       discount10: false,
@@ -104,7 +107,7 @@ export default function ProductCategory() {
   };
 
   const sortProducts = (products, sortOption) => {
-    return products.slice().sort((a, b) => {
+    return products.sort((a, b) => {
       if (sortOption === "priceHighToLow") {
         return b.price - a.price;
       } else {
@@ -114,44 +117,6 @@ export default function ProductCategory() {
   };
 
   const sortedProducts = sortProducts(filteredProducts, sortOption);
-
-  // const [ratingId,setRatingId] = useState([])
-  // const [discountId, setDiscountId] = useState([])
-
-  // useEffect(()=>setProductsToFilter(categoryName),[])
-
-  // const filterDis = selectedCategoryProducts.filter((product)=>{
-  //   return discountId.some(ids=> parseInt(discountPercentage) > ids )
-  // })
-
-  // const filterByRating = selectedCategoryProducts.filter((product)=>{
-  //   return ratingId.some(ids=>parseInt(rating)==ids)
-  // })
-  // console.log(filterByRating);
-  // const handleFilterByRating = (event)=> {
-  //   const { id, checked } = event.target
-
-  //   if(checked){
-  //     setRatingId([...ratingId,id])
-  // }
-  // else{
-  //   setRatingId(ratingId.filter(ids=> ids !==id))
-  // }
-
-  // }
-
-  // const handleDiscount = (e) => {
-  //   const {id, checked} = e.target;
-  //   if(checked){
-  //    return setDiscountId((ids)=>[...ids, id ])
-  //   }
-  //   else if (discountId.length){
-  //     return setDiscountId(discountId.filter(ids=>ids !== id))
-  //   }
-  //   else {
-  //    return []
-  //   }
-  // }
 
   const uniqueBrands = useMemo(() => {
     const brandSet = new Set();
@@ -165,18 +130,15 @@ export default function ProductCategory() {
       <div className={style.mainPage}>
         <div className={style.filterDiv}>
           <h1>Filter</h1>
-         
         </div>
         <div className={style.sidebarContainer}>
           <div className={style.sidebar}>
             <div className={style.categoryDiv}>
               <h2>CATEGORIES</h2>
               <h3>{categoryName}</h3>
-              {/* div className={style.selectedBrandsButtons}> */}
-              {/* {filters.selectedBrands&& filters.selectedBrands.map((brand, index)=> <> <button>X</button> <p key={index}>{brand}</p></>)} */}
-              
+
+            
             </div>
-           
 
             <div className={style.ratingContainer}>
               <h2>CUSTOMER RATINGS</h2>
@@ -289,76 +251,79 @@ export default function ProductCategory() {
 
         <div className={style.container}>
           {sortedProducts.map((product) => (
-            <CategoryCard key={product.id} product={product} />
+            <Suspense fallback={<LoadingSpinner/>} key={product.id}>
+            <CategoryCard product={product} />
+            </Suspense>
           ))}
         </div>
       </div>
-   
     </>
   );
 }
 
-const CategoryCard = (props) => {
-  const { product } = props;
-  const {
-    id,
-    images,
-    title,
-    rating,
-    brand,
-    description,
-    price,
-    discountPercentage,
-    stock,
-  } = product;
+// const CategoryCard = (props) => {
+//   const { product } = props;
+//   const {
+//     id,
+//     images,
+//     title,
+//     rating,
+//     brand,
+//     description,
+//     price,
+//     discountPercentage,
+//     stock,
+//   } = product;
 
-  return (
-    <Link to={`/product/${id}`}>
-      <div className={`${style.box} `}>
-        <div className={style.content}>
-          <div className={style.img_box}>
-            <img src={images[0]} alt={title} />
-          </div>
-        </div>
+//   return (
+//     <Link to={`/product/${id}`}>
+//       <div className={`${style.box} `}>
+//         <div className={style.content}>
+//           <div className={style.img_box}>
+//             <img src={images[0]} alt={title} />
+//           </div>
+//         </div>
 
-        <div className={style.detailsProductInfo}>
-          <div className={style.midSectionProductInfo}>
-            <h3 className={style.productTitle}>{title}</h3>
+//         <div className={style.detailsProductInfo}>
+//           <div className={style.midSectionProductInfo}>
+//             <h3 className={style.productTitle}>{title}</h3>
 
-            <div className={style.rating}>
-              <p className={style.ratingRate}>{rating}&#9734;</p>
-            </div>
-            {brand && <p style={{ color: "#524C42" }}>Brand: {brand}</p>}
-          </div>
-          <p className={style.ProductDescription}>{description}</p>
-        </div>
+//             <div className={style.rating}>
+//               <p className={style.ratingRate}>{rating}&#9734;</p>
+//             </div>
+//             {brand && <p style={{ color: "#524C42" }}>Brand: {brand}</p>}
+//           </div>
+//           <p className={style.ProductDescription}>{description}</p>
+//         </div>
 
-        <div className={style.priceDiv}>
-          <p className={style.price}>${price}</p>
+//         <div className={style.priceDiv}>
+//           <p className={style.price}>${price}</p>
 
-          <p className={style.actualPriceText}>
-            ${(price / (1 - discountPercentage / 100)).toFixed(2)}
-          </p>
+//           <p className={style.actualPriceText}>
+//             ${(price / (1 - discountPercentage / 100)).toFixed(2)}
+//           </p>
 
-          <div className={style.percentageOff}>
-            <p style={{ color: "#388e3c" }}>
-              {parseInt(discountPercentage)}% off
-            </p>
-          </div>
-          {price > 10 && <p>Free delivery</p>}
-          {discountPercentage > 12 && (
-            <h4 className={style.LowestPriceMonth}>
-              Lowest Price in this Month
-            </h4>
-          )}
-          {stock < 30 && <p className={style.onlyFew}>only few left</p>}
-        </div>
-      </div>
-    </Link>
-  );
-};
-CategoryCard.propTypes = {
-  product: PropTypes.object.isRequired, // Example, adjust as needed
-};
+//           <div className={style.percentageOff}>
+//             <p style={{ color: "#388e3c" }}>
+//               {parseInt(discountPercentage) > 1
+//                 ? parseInt(discountPercentage) + "% off"
+//                 : "best deal"}
+//             </p>
+//           </div>
+//           {price > 10 && <p>Free delivery</p>}
+//           {discountPercentage > 12 && (
+//             <h4 className={style.LowestPriceMonth}>
+//               Lowest Price in this Month
+//             </h4>
+//           )}
+//           {stock < 30 && <p className={style.onlyFew}>only few left</p>}
+//         </div>
+//       </div>
+//     </Link>
+//   );
+// };
+// CategoryCard.propTypes = {
+//   product: PropTypes.object.isRequired, // Example, adjust as needed
+// };
 
-export { CategoryCard };
+// export { CategoryCard };

@@ -1,6 +1,6 @@
 import React,{ useRef } from "react";
-import DealCard from "../DealCard"
-import style from "../dealCard.module.css"
+import HomeCard from "../HomeCard/HomeCard"
+import style from "./SpecialCardStyle.module.css"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
@@ -57,8 +57,38 @@ const scrollRight = (index) => {
         .filter((product) => product.category === category)
         .slice(0, 10)
         .map((product) => (
-          <DealCard key={product.id} product={product} />
-
+          
+  <div key={product.id} className={style.box}>
+      <div className={style.content}>
+        <Link to={`/products/category/${category}`}>
+          <div className={style.img_box}>
+            <img src={product.thumbnail} alt={product.title} />
+          </div>
+        </Link>
+        <div className={style.detail}>
+       <div className={style.info}>
+         {product.tags ? (
+           product.tags.length > 1 ? (
+             <h3 className={style.cardTitle} >{product.tags[1]}</h3>
+           ) : (
+             <h3 className={style.cardTitle} >{product.tags[0]}</h3>
+           )
+         ) : (
+           <h3  className={style.cardTitle} >{product.title}</h3>
+         )}
+         {product.discountPercentage && (
+           <p className={style.percentageOff}>
+             {parseInt(product.discountPercentage) > 0
+               ? `Min. ${parseInt(product.discountPercentage)}% off`
+               : "Most-Loved"}
+           </p>
+         )}
+     
+       </div>
+     </div>
+   </div>
+     </div> 
+         
 
     ))}
     
@@ -86,3 +116,7 @@ const scrollRight = (index) => {
   }
 
   export default SpecialCard
+
+
+
+

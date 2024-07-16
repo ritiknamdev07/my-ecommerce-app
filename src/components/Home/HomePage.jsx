@@ -1,19 +1,22 @@
-//https://fakestoreapi.com/products 19 products only 19p api
-//https://dummyjson.com/products?limit=100
 
-import React, { useContext, useEffect, useRef } from "react";
-import DealCard from "./DealCard";
-import dealCss from "./dealCard.module.css";
+import  { useContext, useEffect, useRef } from "react";
+
+import dealCss from "./HomePage.module.css";
 import { Link } from "react-router-dom";
-import { AppContext } from "../context";
-import LoadingSpinner from "./LoadingSpinner/LoadingSpinner";
-import ImageSlider from "./ImageSlider/ImageSlider";
-import SpecialCard from "./SpecialCard/SpecialCard";
+import { AppContext } from "../../context";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
+import ImageSlider from "../ImageSlider/ImageSlider";
+import SpecialCard from "../SpecialCard/SpecialCard";
+import HomeCard from "../HomeCard/HomeCard";
+
+// import React, { Suspense } from "react";
+// const SpecialCard = React.lazy(() => import("../SpecialCard/SpecialCard"));
+// const HomeCard = React.lazy(() => import("../HomeCard/HomeCard"));
 
 
 const useProductsData = () => useContext(AppContext);
 
-const DealsContainer = () => {
+const HomePage = () => {
   const { products, loading, error, fetchProducts  } = useProductsData();
 
   useEffect(() => {
@@ -54,6 +57,7 @@ const DealsContainer = () => {
                 products={products}
                 sameCategoryArray={sameCategoryArray}
               />
+             
             )
           );
         })}
@@ -83,7 +87,7 @@ const DealsContainer = () => {
                       )
                       .slice(0, 4)
                       .map((product) => (
-                        <DealCard key={product.id} product={product} />
+                        <HomeCard key={product.id} product={product} />
                       ))}
                       
                   </div>
@@ -103,4 +107,4 @@ const DealsContainer = () => {
   );
 };
 
-export default DealsContainer;
+export default HomePage;

@@ -16,6 +16,29 @@
     border-radius: 3px;
     
 }
+
+.navbar a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.linkContainer{
+   display: flex;
+   align-items: center;
+   font-size: 18px;
+}
+
+.linkContainer h3{
+    margin-left: 2px;
+   font-weight: 500;
+    font-size: 20px;
+}
+
+/* .cartIcon{
+font-size: larger;
+font-weight: 700;
+} */
+
 .navItem{
     max-width: 1248px;
     width: 100%;
@@ -44,6 +67,8 @@ body{
     scroll-behavior: smooth;
 }
 
+
+
 .input{
     padding: 8px 12px;
   
@@ -59,13 +84,15 @@ body{
 }
 .icon {
     position: absolute;
-    top: 50%;
+    top: 60%;
     right: 10px;
     transform: translateY(-50%);
     color: #888;
+    font-size: x-large;
+    
 }
 
-.login_div{
+/* .login_div{
     color: #fff;
 
     display: flex;
@@ -78,7 +105,7 @@ body{
     letter-spacing: .1px;
     font-weight: 500;
 
-}
+} */
 .login_link{
     color: #f1f3f6;
     cursor: pointer;
