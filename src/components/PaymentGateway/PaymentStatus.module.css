@@ -1,0 +1,17 @@
+.container {
+  display: grid;
+      place-items: center; /* Center both horizontally and vertically */
+      height: 80vh;
+  }
+
+  .container div {
+    width: 400px;
+      height: 400px;
+      
+  
+  }
+
+  .container div img{
+    width: 400px;
+    height:  400px;
+  }

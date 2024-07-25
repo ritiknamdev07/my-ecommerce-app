@@ -75,7 +75,7 @@
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
-.selectedBrandsButtons{
+.selectedBrandsButtons {
   display: flex;
   flex-direction: column;
 }
@@ -104,20 +104,6 @@
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
 
-/* .brands select {
-    margin: 40px;
-    background: rgba(0, 0, 0, 0.3);
-    color: #fff;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
-  } */
-
-/* .brands::after {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-
-  } */
-
 .productRating select :hover {
   color: #1257c5;
 }
@@ -125,12 +111,6 @@
 .brands select :hover {
   color: #1257c5;
 }
-/* .brands select:focus {
-    outline: none;
-    border-color: #555;
-    background: aqua;
-    
-  } */
 
 .discountDiv {
   display: flex;
@@ -141,8 +121,6 @@
 .discountDiv label {
   text-shadow: 0 1px 0 rgba(7, 7, 7, 0.4);
 }
-
-
 
 .sortDiv {
   display: flex;
@@ -174,11 +152,7 @@
 .ratingContainer {
 }
 
-
-
- /* CategoryCard section */ 
-
-
+/* CategoryCard section */
 
 .container {
   grid-column: 2/-1;
@@ -190,15 +164,14 @@
 
   margin-top: 5px;
 }
-.container a{
-    text-decoration: none;
-    color: #111113;
-}
-                                  
-.container a:hover .productTitle{
-    color: #2874f0;
+.container a {
+  text-decoration: none;
+  color: #111113;
 }
 
+.container a:hover .productTitle {
+  color: #2874f0;
+}
 
 .box {
   overflow: hidden;

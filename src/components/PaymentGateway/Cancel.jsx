@@ -1,7 +1,11 @@
-
+import style from "./PaymentStatus.module.css"
 
 export default function Cancel () {
     return( 
-        <h1>cancel</h1>
+        <div className={style.container}  >
+        <div>
+            <img src="../stripePaymentStatus/failed.png" alt="failed payment" />
+            </div>
+        </div>
     )
 }

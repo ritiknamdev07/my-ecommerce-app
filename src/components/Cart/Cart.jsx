@@ -6,7 +6,6 @@ import useStripePayment from "../../hooks/useStripePayment";
 
 import { CiSquareRemove } from "react-icons/ci";
 
-
 export default function Cart() {
   useEffect(() => window.scrollTo(0, 0), []);
   const useCartData = () => useContext(CartContext);
@@ -33,8 +32,6 @@ export default function Cart() {
     (sum, price) => sum + Number(price),
     0
   );
-
-  
 
   return (
     <>
@@ -139,10 +136,16 @@ export default function Cart() {
                                         +
                                       </button>
                                     </div>
-                                    <button style={{display:"flex", fontSize:"17px"}}
+                                    <button
+                                      style={{
+                                        display: "flex",
+                                        fontSize: "17px",
+                                      }}
                                       onClick={() => removeProductToCart(id)}
                                     >
-                                     <div><CiSquareRemove /></div>
+                                      <div>
+                                        <CiSquareRemove />
+                                      </div>
                                       remove
                                     </button>
                                   </div>

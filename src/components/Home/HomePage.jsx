@@ -29,14 +29,11 @@ const HomePage = () => {
 
   const images = [
     "/slidesImg/img1.jpg",
-    "/slidesImg/img3.jpg",
     "/slidesImg/img4.jpg",
     "/slidesImg/img5.jpg",
-    "/slidesImg/img6.jpg",
-    "/slidesImg/image.png",
     "/slidesImg/img7.jpg",
     "/slidesImg/img8.jpg",
-    "/slidesImg/img9.jpg",
+
   ];
   // if (loading) return <div><LoadingSpinner /></div>;
    if (error) return <div>Error: {error}</div>;

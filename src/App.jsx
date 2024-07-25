@@ -1,6 +1,5 @@
 import "./App.css";
 
-
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Login from "./components/Login/Login.jsx";
@@ -16,21 +15,17 @@ import Success from "./components/PaymentGateway/Success.jsx";
 import Cancel from "./components/PaymentGateway/Cancel.jsx";
 import ImageSlider from "./components/ImageSlider/ImageSlider.jsx";
 
-import Footer from "./components/Footer/Footer.jsx"
+import Footer from "./components/Footer/Footer.jsx";
 import HomePage from "./components/Home/HomePage.jsx";
 
-function App() { 
-
-
-
-
+function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: (
         <>
           <Navbar />
-        
+
           <HomePage key="oneSection-1" />
         </>
       ),
@@ -39,7 +34,7 @@ function App() {
       path: "/login",
       element: (
         <>
-          <Navbar /> 
+          <Navbar />
           <Login />
         </>
       ),
@@ -49,7 +44,7 @@ function App() {
       element: (
         <>
           <Navbar />
-           <Cart />{" "}
+          <Cart />{" "}
         </>
       ),
     },
@@ -71,20 +66,33 @@ function App() {
         </>
       ),
     },
-    {path:"/success", element:( <Success /> )},
-    {path:"/cancel", element:( <Cancel /> )},
+    {
+      path: "/success",
+      element: (
+        <>
+          <Navbar />
+          <Success />
+        </>
+      ),
+    },
+    {
+      path: "/cancel",
+      element: (
+        <>
+          {" "}
+          <Navbar /> <Cancel />{" "}
+        </>
+      ),
+    },
   ]);
 
   return (
     <>
       <AppContext.Provider value={useProductData()}>
         <CartContext.Provider value={useCartProducts()}>
-     
-     
           <RouterProvider router={router} />
-   
+
           <Footer />
-         
         </CartContext.Provider>
       </AppContext.Provider>
     </>

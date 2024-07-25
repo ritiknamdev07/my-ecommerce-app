@@ -1,7 +1,12 @@
 
+import style from "./PaymentStatus.module.css"
 
 export default function Success () {
     return( 
-        <h1>success</h1>
+        <div className={style.container}  >
+        <div>
+            <img src="../stripePaymentStatus/success.png" alt="success payment" />
+            </div>
+        </div>
     )
 }

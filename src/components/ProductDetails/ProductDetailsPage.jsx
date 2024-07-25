@@ -10,7 +10,7 @@ import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 
 // react-icons
 import { MdOutlineSecurity } from "react-icons/md";
-import { TbTruckDelivery,TbTruckReturn } from "react-icons/tb";
+import { TbTruckDelivery, TbTruckReturn } from "react-icons/tb";
 import { FaBoxesPacking } from "react-icons/fa6";
 import { LuWarehouse } from "react-icons/lu";
 import { RxBorderDotted } from "react-icons/rx";
@@ -154,7 +154,6 @@ const ProductDetailsPage = () => {
                     <h1>Specifications</h1>
                   </div>
                   <div className={style.generalInfoContainer}>
-                    <h2>General</h2>
                     <div className={style.generalInfoFlex}>
                       <div className={style.generalInfoIcon}>
                         <div>
@@ -166,58 +165,53 @@ const ProductDetailsPage = () => {
                       </div>
                       <div className={style.generalInfoIcon}>
                         <div>
-                        <TbTruckDelivery />
+                          <TbTruckDelivery />
                         </div>
                         <div>
-                        <span>{shippingInformation}</span>
+                          <span>{shippingInformation}</span>
                         </div>
                       </div>
 
                       <div className={style.generalInfoIcon}>
                         <div>
-                        <FaBoxesPacking />
+                          <FaBoxesPacking />
                         </div>
                         <div>
-                        <span>{availabilityStatus}</span>
+                          <span>{availabilityStatus}</span>
                         </div>
                       </div>
 
                       <div className={style.generalInfoIcon}>
                         <div>
-                        <TbTruckReturn />
-
+                          <TbTruckReturn />
                         </div>
                         <div>
-                        <span>{returnPolicy}</span>
-                        </div>
-                      </div>
-                      
-                      <div className={style.generalInfoIcon}>
-                        <div>
-                        <LuWarehouse />
-                        </div>
-                        <div>
-                        <span>stock: {stock}</span>
+                          <span>{returnPolicy}</span>
                         </div>
                       </div>
 
                       <div className={style.generalInfoIcon}>
                         <div>
-                        <RxBorderDotted />
+                          <LuWarehouse />
                         </div>
                         <div>
-                        <span>minimumOrderQuantity: {minimumOrderQuantity}</span>
+                          <span>stock: {stock}</span>
                         </div>
                       </div>
-                      
-                    
-                      
-                      
+
+                      <div className={style.generalInfoIcon}>
+                        <div>
+                          <RxBorderDotted />
+                        </div>
+                        <div>
+                          <span>
+                            minimumOrderQuantity: {minimumOrderQuantity}
+                          </span>
+                        </div>
+                      </div>
                     </div>
                     {/* <p>weight: {product.weight}</p> */}
                   </div>
-
-              
                 </div>
 
                 <div>
