@@ -1,4 +1,4 @@
-import { useCallback, useReducer, useState } from "react"
+import { useCallback, useReducer, } from "react"
 import { useProductData } from "./useProductData"
 
 const useFilterProducts = () => {

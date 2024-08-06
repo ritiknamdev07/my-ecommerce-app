@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useReducer, useState } from "react"
+import { useCallback,  useReducer,  } from "react"
 
 
 
@@ -56,31 +56,13 @@ import { useCallback, useEffect, useMemo, useReducer, useState } from "react"
     
     }
  
-// const fetchProducts = async () => {
-//     try {
-//       dispatch({ type: "setLoading", payload: true });
-//       const response = await fetch("https://dummyjson.com/products?limit=195");
-//       console.log(response);
-//       if (!response.ok) {
-//         throw new Error("Failed to fetch products");
-//       }
-//       const data = await response.json();
-//       dispatch({ type: "setProducts", payload: data.products });
-//     } catch (error) {
-//       console.error('Error fetching products:', error);
-//     } finally {
-//       dispatch({ type: "setLoading", payload: false });
-//     }
-//   }
  
 
     const setSearch = useCallback((value) => {
         
           dispatch({type: "setSearchValue", payload: value})
     },[])
-
-//    const filteredProducts =  useMemo(()=>products.filter((product)=>product.title.toLowerCase().includes(search.toLowerCase())),[products, search]) ;
-    
+   
    
     return {products, search, setSearch,loading, fetchProducts ,error }
 }
